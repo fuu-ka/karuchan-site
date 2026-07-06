@@ -11,15 +11,19 @@
 
 <body>
 <header class="header">
-<!--★サイト名画像-->
+
 <a href="#home">
     <img 
         class="site-title" 
         src="images/top.png" 
         alt="となりのかるちゃん">
 </a>
-<!-- nav -->
-<nav class="nav">
+
+<button class="menu-button" id="menuButton">
+    ☰
+</button>
+
+<nav class="nav" id="nav">
 
     <a href="#home">HOME</a>
     <a href="#profile">カルちゃんって？</a>
@@ -28,20 +32,19 @@
     <a href="#contact">Contact</a>
 
     <div class="nav-sns">
-        <a href="https://www.instagram.com/fu0323/?hl=ja"
-        target="_blank">
+        <a href="https://www.instagram.com/fu0323/?hl=ja" target="_blank">
             <img src="images/sns/sns_insta.svg" alt="instagram">
         </a>
-        <a href="https://x.com/fu0323"
-        target="_blank">
+        <a href="https://x.com/fu0323" target="_blank">
             <img src="images/sns/sns_x.svg" alt="X">
         </a>
-        <a href="https://note.com/spotbill"
-        target="_blank">
-        <img src="images/sns/sns_note.svg" alt="note">
+        <a href="https://note.com/spotbill" target="_blank">
+            <img src="images/sns/sns_note.svg" alt="note">
         </a>
     </div>
+
 </nav>    
+
 </header>
 
 <main>
@@ -247,10 +250,6 @@
 
 
 </section>
-        <!-- ライトボックス（拡大表示用） -->
-        <div class="lightbox" id="lightbox">
-            <img id="lightbox-img" src="" alt="">
-        </div>
 
         <!-- モーダル -->
     <div id="modal" class="modal">
@@ -319,23 +318,7 @@ setInterval(() => {
 }, 5000);
 
 
-// ① 画像クリック拡大
-const images = document.querySelectorAll(".gallery img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-
-images.forEach(img => {
-    img.addEventListener("click", () => {
-        lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
-    });
-});
-
-lightbox.addEventListener("click", () => {
-    lightbox.style.display = "none";
-});
-
-// ② スクロールふわっと表示
+// スクロールふわっと表示
 const faders = document.querySelectorAll(".fade-in");
 
 const observer = new IntersectionObserver((entries) => {
@@ -374,6 +357,26 @@ modal.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.style.display = "none";
   }
+});
+
+const menuButton = document.getElementById("menuButton");
+const nav = document.getElementById("nav");
+
+menuButton.addEventListener("click", () => {
+    nav.classList.toggle("open");
+
+    if (nav.classList.contains("open")) {
+        menuButton.textContent = "×";
+    } else {
+        menuButton.textContent = "☰";
+    }
+});
+
+document.querySelectorAll(".nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menuButton.textContent = "☰";
+    });
 });
 
 </script>

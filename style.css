@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
+
 body{
     font-family: "Yu Gothic", "Hiragino Sans";
     color: #333;
@@ -167,7 +172,7 @@ z-index: 0;
 }
 
 /* 見出し */
-.profile h2{
+.profile > h2{
     text-align: center;
     font-size: 2.3rem;
     margin-bottom: 50px;
@@ -502,4 +507,156 @@ z-index: 0;
 .copyright{
     font-size: .8rem;
     color: #888;
+}
+/* ハンバーガーボタン：PCでは非表示 */
+.menu-button{
+    display: none;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px){
+
+    html, body{
+        overflow-x: hidden;
+    }
+
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+
+    .header{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 16px;
+        gap: 10px;
+    }
+
+    .site-title{
+        width: 220px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .menu-button{
+        display: block;
+        border: none;
+        background: white;
+        font-size: 30px;
+        line-height: 1;
+        cursor: pointer;
+        z-index: 10001;
+    }
+
+    .nav{
+        position: fixed;
+        top: 0;
+        right: -280px;
+        width: 260px;
+        height: 100vh;
+        background: white;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        padding-top: 80px;
+        gap: 18px;
+        font-size: 15px;
+
+        transition: 0.3s ease;
+        box-shadow: -8px 0 24px rgba(0,0,0,0.08);
+        z-index: 10000;
+    }
+
+    .nav.open{
+        right: 0;
+    }
+
+    .nav a{
+        padding: 8px 12px;
+    }
+
+    .nav-sns{
+        width: auto;
+        margin-left: 0;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 36px;
+        padding: 40px 16px 80px;
+        min-height: calc(100vh - 70px);
+        }
+
+    .hero-stack{
+        width: 80vw;
+        max-width: 280px;
+        aspect-ratio: 4 / 3;
+        height: auto;
+    }
+
+    .hero-text{
+        text-align: center;
+    }
+
+    .hero-text h1{
+        font-size: 2rem;
+    }
+
+    .profile,
+    .blog,
+    .goods,
+    .contact{
+        padding: 60px 16px;
+    }
+
+    .profile > h2{
+        font-size: 1.55rem;
+        text-align: center;
+        line-height: 1.6;
+        white-space: nowrap;
+        }
+
+    .profile-card{
+        padding: 32px 20px;
+        border-radius: 30px;
+    }
+
+    .profile-top{
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .profile-main-image img{
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .profile-text{
+        width: 100%;
+        text-align: left;
+    }
+
+    .gallery-title{
+        font-size: 1.5rem;
+        margin: 50px 0 30px;
+    }
+
+    .gallery-item img{
+        width: 130px;
+        height: 130px;
+    }
+
+    .modal-content{
+        max-width: 90vw;
+        padding: 20px;
+    }
 }
