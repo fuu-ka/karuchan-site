@@ -55,15 +55,16 @@
     </div>
 
     <div class="hero-text">
-        <h1>今日もどこかで、<br>
-            のんびりと。
-        </h1>
-        
+        <h1>今日も、どこかで。</h1>   
+        <p>
+            カルガモ「カルちゃん」の<br>
+            毎日を紹介していきます。
+        </p>   
     </div>
     </section>
 
 <!-- ここがよいよ、カルちゃん -->
-<section class="profile2">
+<section class="profile" id="profile">
 
     <h2>ここがよいよ、カルちゃん！</h2>
 
@@ -89,17 +90,19 @@
 
                 <div class="profile-item">
                     <h4>性格</h4>
-                    <p>のんびりマイペース。ちょっと気分屋だけど優しい。</p>
+                    <p>のんびりマイペース。<br>
+                        ちょっと気分屋。</p>
+
                 </div>
 
                 <div class="profile-item">
                     <h4>好き</h4>
-                    <p>水辺・日向ぼっこ。</p>
+                    <p>水辺<br>イネ科の植物<br>ドングリ</p>
                 </div>
 
                 <div class="profile-item">
                     <h4>特徴</h4>
-                    <p>ふわっとしていて、いつもどこかに流されがち。</p>
+                    <p>とにかくかわいい。</p>
                 </div>
 
             </div>
@@ -112,20 +115,59 @@
         </h3>
 
         <!-- ギャラリー -->
-        <div class="profile-gallery">
+    <div class="profile-gallery">
 
-            <img src="images/profile/kiwa.jpeg" class="click-img" alt="際で眠る">
-            <img src="images/profile/asi.jpg" class="click-img" alt="足がチラ見え">
-            <img src="images/profile/snow.jpg" class="click-img" alt="雪の中">
-            <img src="images/profile/nemuru.jpg" class="click-img" alt="どこでも眠る">
-            <img src="images/profile/karu5.jpg" class="click-img" alt="">
-            <img src="images/profile/karu5.jpg" class="click-img" alt="">
-            <img src="images/profile/karu5.jpg" class="click-img" alt="">
-
+        <div class="gallery-item" 
+            data-title="フォルム" 
+            data-text="アーモンドのようなかたち。">
+            <img src="images/profile/forme.jpg">
+        <p>かたち</p>
         </div>
 
+        <div class="gallery-item" 
+            data-title="鳴き声" 
+            data-text="グェアー、グェアー。">
+            <img src="images/profile/naku.jpg">
+        <p>声</p>
+        </div>
+
+        <div class="gallery-item" 
+            data-title="変なところに立つ" 
+            data-text="すごいところに立っていたりする。">
+            <img src="images/profile/kiwa.jpeg">
+        <p>変なところに立つ</p>
+        </div>
+
+         <div class="gallery-item" 
+            data-title="うとうと眠る" 
+            data-text="眠くなったらうとうとしちゃう。">
+            <img src="images/profile/nemuru.jpg">
+        <p>うとうと眠る</p>
+        </div>       
+
+        <div class="gallery-item" 
+            data-title="飛ぶ姿" 
+            data-text="がんばって飛ぶよ">
+            <img src="images/profile/tobu.jpeg">
+        <p>飛ぶ姿</p>
+        </div> 
+
+        <div class="gallery-item" 
+            data-title="オレンジ色のあし。" 
+            data-text="おしゃれ上級者さん">
+            <img src="images/profile/asi.jpg">
+        <p>オレンジ色のあし</p>
+        </div> 
+        
+        <div class="gallery-item" 
+            data-title="まるまる" 
+            data-text="まるまる">
+            <img src="images/profile/karu5.jpg">
+        <p>まるまる</p>
+        </div> 
     </div>
 
+    </div>
 </section>
 
 <!-- ブログ -->
@@ -167,18 +209,20 @@
     <div class="goods-container">
 
     <div class="goods-card">
-        <img src="images/linestamp.png" alt="LINEスタンプ">
+        <img src="images/goods/linestamp.png" alt="LINEスタンプ">
         <h3>LINEスタンプ</h3>
         <p>日常で、ゆるいカルちゃん。</p>
         <a href="https://store.line.me/stickershop/product/33919230/ja"
+        target="_blank"
         class="btn">見る</a>
     </div>
 
     <div class="goods-card">
-        <img src="images/keyring.png" alt="キーホルダー">
+        <img src="images/goods/keyring.png" alt="キーホルダー">
         <h3>キーホルダー</h3>
         <p>近所のカルちゃんとお散歩。</p>
         <a href="https://suzuri.jp/fu0323/14192363/acrylic-keychain/50x50mm/clear" 
+        target="_blank"
         class="btn">見る</a>
     </div>
 
@@ -209,13 +253,14 @@
         </div>
 
         <!-- モーダル -->
-         <div id="modal" class="modal">
+    <div id="modal" class="modal">
+        <div class="modal-content">
             <span class="close">&times;</span>
-            <img id="modal-img" src="" alt="">
+            <img id="modal-img">
             <h3 id="modal-title"></h3>
             <p id="modal-text"></p>
-         </div>
-
+        </div>
+    </div>
 </main>
 
 <!-- フッター -->
@@ -226,7 +271,7 @@
 
     <p class="footer-text">
         今日もどこかで、<br>
-    <p>カルちゃんはのんびりと過ごしています。
+        カルちゃんはのんびりと過ごしています。
     </p>
 
 <p class="copyright">
@@ -237,6 +282,16 @@
 
 <!-- JavaScript -->
 <script>
+// navスクロール検知
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 10) {
+        header.classList.add("shadow");
+    } else {
+        header.classList.remove("shadow");
+    }
+});
 
 const slides = document.querySelectorAll(".hero-stack .slide");
 let index = 0;
@@ -299,13 +354,16 @@ const modalTitle = document.getElementById("modal-title");
 const modalText = document.getElementById("modal-text");
 const closeBtn = document.querySelector(".close");
 
-document.querySelectorAll(".click-img").forEach(img => {
-  img.addEventListener("click", () => {
-    modal.style.display = "flex";
-    modalImg.src = img.src;
-    modalTitle.textContent = img.dataset.title;
-    modalText.textContent = img.dataset.text;
-  });
+document.querySelectorAll(".gallery-item").forEach(item => {
+    item.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src =
+            item.querySelector("img").src;
+        modalTitle.textContent =
+            item.dataset.title;
+        modalText.textContent =
+            item.dataset.text;
+    });
 });
 
 closeBtn.addEventListener("click", () => {
