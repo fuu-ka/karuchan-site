@@ -152,6 +152,54 @@ z-index: 0;
     font-size: 1.2rem;
     color: #666;
 }
+/* カルちゃんって？ */
+.about-karu{
+    padding: 100px 40px;
+    background-color: #fafcf7;
+}
+
+.about-karu-inner{
+    width: min(100%, 1000px);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.about-karu-text{
+    flex: 1;
+}
+
+.section-subtitle{
+    margin-bottom: 5px;
+    color: #8b9b5d;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+}
+
+.about-karu h2{
+    margin: 0 0 30px;
+    font-size: 2.3rem;
+}
+
+.about-karu-text p{
+    margin: 0 0 18px;
+}
+
+.about-karu-image{
+    width: 42%;
+    flex-shrink: 0;
+}
+
+.about-karu-image img{
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 45% 55% 48% 52% / 55% 45% 55% 45%;
+}
 
 .karu-divider{
     width: 100%;
@@ -678,4 +726,26 @@ z-index: 0;
         max-width: 90vw;
         padding: 20px;
     }
+}
+
+.about-karu{
+    padding: 70px 20px;
+}
+
+.about-karu-inner{
+    flex-direction: column-reverse;
+    gap: 35px;
+}
+
+.about-karu-text{
+    width: 100%;
+}
+
+.about-karu h2{
+    font-size: 1.8rem;
+}
+
+.about-karu-image{
+    width: 100%;
+    max-width: 340px;
 }
